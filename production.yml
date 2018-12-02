@@ -1,0 +1,25 @@
+version: '2'
+services:
+  web:
+    restart: always
+    build: ./bike_store
+    volumes:
+      - ./secrets:/code/secrets
+      - /var/www/bikes/static:/var/www/bikes/static
+    env_file: prd.env
+    environment:
+      DEBUG: 'False'
+    command: ./run_prod.sh
+
+  nginx:
+    restart: always
+    build: ./nginx/
+    ports:
+      - "80:80"
+    volumes:
+      - /www/static
+      - /www/media
+    volumes_from:
+      - web
+    links:
+      - web:web

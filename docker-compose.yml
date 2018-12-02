@@ -1,0 +1,16 @@
+version: '2'
+services:
+  web:
+    build: 
+      context: ./bike_store
+      dockerfile: Dockerfile_local
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./bike_store:/code
+      - ./secrets:/code/secrets
+    env_file: dev.env
+    environment:
+      DEBUG: 'False'
+    command: sh run_dev.sh
+

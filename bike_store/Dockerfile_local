@@ -1,0 +1,12 @@
+FROM python:3.6
+
+RUN apt-get update -qy
+RUN apt-get install -y build-essential libssl-dev libffi-dev python3-dev
+
+ENV CODE=/code
+
+COPY requirements.txt /
+RUN pip install -r requirements.txt
+
+WORKDIR $CODE
+VOLUME $CODE
