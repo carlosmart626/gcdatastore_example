@@ -10,7 +10,5 @@ services:
       - ./bike_store:/code
       - ./secrets:/code/secrets
     env_file: dev.env
-    environment:
-      DEBUG: 'False'
     command: sh run_dev.sh
 

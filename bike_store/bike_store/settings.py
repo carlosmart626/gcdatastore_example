@@ -61,7 +61,9 @@ ROOT_URLCONF = 'bike_store.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            os.path.join(BASE_DIR, "bike_store/templates"),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,6 +128,12 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/var/www/bikes/static'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+print(STATICFILES_DIRS)
+
 
 LOGGING = {
     'version': 1,
@@ -144,7 +152,7 @@ LOGGING = {
     'formatters': {
         'verbose': {
             '()': 'django.utils.log.ServerFormatter',
-            'format': '[%(levelname)s %(server_time)s %(name)s.%(module)s] %(message)s'
+            'format': '[%(levelname)s %(name)s.%(module)s] %(message)s'
         },
     },
     'loggers': {

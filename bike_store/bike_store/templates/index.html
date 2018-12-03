@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bikes app</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+    <style>
+        html {
+            height: 100%;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            height: 100%;
+        }
+        .Aligner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100%;
+        }
+        .Aligner-item {
+            max-width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="Aligner">
+        <div class="Aligner-item">
+            <img src="{% static 'img/bicycle.png' %}" alt="bicycle">
+            <h1 class="ui center aligned header">Wellcome!</h1>
+            <p style="text-align: center"><a class="ui green button" href="/bikes">Go to bikes store API</a></p>
+            <p style="text-align: center"><i class="angle double up icon"></i></p>
+        </div>
+    </div>
+</body>
+</html>

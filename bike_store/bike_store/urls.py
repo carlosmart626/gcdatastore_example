@@ -16,10 +16,17 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import include, path
+from django.shortcuts import render
+
+
+def index(request):
+    return render(request, 'index.html')
+
 
 urlpatterns = [
+    path('', index, name='index'),
     path('bikes/', include('bikes.urls')),
 ]
 
-if settings.DEBUG is False:
+if settings.DEBUG:
     urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
