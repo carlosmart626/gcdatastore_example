@@ -3,7 +3,7 @@ from .datastore import create_update_instance
 
 
 class BikeSerializer(serializers.Serializer):
-    id = serializers.IntegerField(required=False)
+    id = serializers.IntegerField(read_only=True)
     name = serializers.CharField(max_length=200)
     price = serializers.FloatField()
     manufacturer = serializers.CharField()
