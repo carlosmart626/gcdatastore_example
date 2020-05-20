@@ -14,7 +14,7 @@ google-cloud-datastore==1.7.1
 googleapis-common-protos==1.5.5
 grpcio==1.16.1
 gunicorn==19.9.0
-httplib2==0.12.0
+httplib2==0.18.0
 idna==2.7
 ipython==7.2.0
 ipython-genutils==0.2.0
